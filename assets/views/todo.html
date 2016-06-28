@@ -9,14 +9,24 @@
 				<md-list>
 					<md-list-item class="md-3-line" ng-repeat="item in todos" ng-click="null" aria-label="listItem">
 						<md-checkbox class="md-primary" class="md-avatar"></md-checkbox>
-						<ng-md-icon icon="star" style="fill:pink" class="md-avatar" size="36"> </ng-md-icon>
+						<md-button aria-label="editButton"> 
+								<ng-md-icon icon="edit" style="fill:grey" class="" size="24"> </ng-md-icon> 
+						</md-button>
+						<md-button aria-label="faveButton"> 
+							<ng-md-icon icon="star" style="fill:pink" class="md-avatar" size="36"> </ng-md-icon>
+						</md-button>
 						<div class="md-list-item-text">
 							<h3> {{ item.name }} </h3>
 							<p> {{ item.additional }} </p>
 							<!-- <p> {{ item.isImportant }} </p> -->
 						</div>
 						<span flex></span>
-						<md-button aria-label="removeButton" ng-click="remove(item)"> <ng-md-icon icon="clear" style="fill:grey" class="" size="24"> </ng-md-icon> </md-button>
+						<div>
+							
+							<md-button aria-label="removeButton" ng-click="remove(item)"> 
+								<ng-md-icon icon="clear" style="fill:grey" class="" size="24"> </ng-md-icon> 
+							</md-button>
+						</div>
 					</md-list-item>
 				</md-list>
 				<!-- end of list of all todos -->
