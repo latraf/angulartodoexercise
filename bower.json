@@ -1,0 +1,28 @@
+{
+  "name": "ex01",
+  "authors": [
+    "rflat <core.safecrlf>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-aria": "^1.5.7",
+    "angular-material": "^1.0.9",
+    "angular-messages": "^1.5.7",
+    "angular-ui-router": "^0.3.1",
+    "angular-material-icons": "^0.7.0"
+  }
+}

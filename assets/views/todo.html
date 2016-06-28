@@ -1,0 +1,60 @@
+<div ng-controller="TodoCtrl" ng-cloak layout="column">
+	<!-- tabs -->
+	<md-tabs md-border-bottom md-dynamic-height>
+		<!-- all tab -->
+		<md-tab label="all">
+			<md-content layout-padding>
+
+				<!-- list of all todos (MAKE IT AS A DIRECTIVE) -->
+				<md-list>
+					<md-list-item class="md-3-line" ng-repeat="item in todos" ng-click="null" aria-label="listItem">
+						<md-checkbox class="md-primary" class="md-avatar"></md-checkbox>
+						<ng-md-icon icon="star" style="fill:pink" class="md-avatar" size="36"> </ng-md-icon>
+						<div class="md-list-item-text">
+							<h3> {{ item.name }} </h3>
+							<p> {{ item.additional }} </p>
+							<!-- <p> {{ item.isImportant }} </p> -->
+						</div>
+						<span flex></span>
+						<md-button aria-label="removeButton" ng-click="remove(item)"> <ng-md-icon icon="clear" style="fill:grey" class="" size="24"> </ng-md-icon> </md-button>
+					</md-list-item>
+				</md-list>
+				<!-- end of list of all todos -->
+
+			</md-content>
+		</md-tab>
+
+		<!-- important tab -->
+		<md-tab label="important">
+			<md-content layout-padding>
+				<h1> Important </h1>
+			</md-content>
+		</md-tab>
+		
+		<!-- not done tab -->
+		<md-tab label="not done">
+			<md-content layout-padding>
+				<h1> Not Done </h1>
+			</md-content>
+		</md-tab>
+		
+		<!-- done tab -->
+		<md-tab label="done">
+			<md-content layout-padding>
+				<h1> Done </h1>
+			</md-content>
+		</md-tab>
+	</md-tabs>
+	<!-- end tabs -->
+
+	<!-- add todo button -->
+	<md-content layout-padding>
+		<div layout="row">
+			<span flex></span>
+			<md-button class="md-fab md-primary md-hue-2" ng-click="addTodo($event)" aria-label="addTodoButton">
+				<!-- <ng-md-icon icon="add" style="fill:white" size="36"> </ng-md-icon> -->
+			</md-button>
+		</div>
+	</md-content>
+	<!-- end add todo button -->
+</div>
