@@ -34,12 +34,18 @@
 					// $scope.checkForm();
 					title = $scope.todo.title;
 					notes = $scope.todo.notes;	
+					// $scope.checkForm(title);
 					console.log(title);
 					console.log(notes);
 					console.log(isImportant);
-					$scope.pushValues();
-					console.log("PUSH");
-					$scope.reset();
+					if(title === null || title === undefined || title === ""){
+						console.log("no entry");
+					}
+					else{
+						$scope.pushValues();
+						console.log("PUSH");
+						$scope.reset();
+					}
 					console.log($scope.todos.length);
 				// }
 			}
@@ -95,9 +101,11 @@
 				$scope.todos.splice($scope.todos[index], 1);
 			}
 
-			$scope.checkForm = function() {
-				console.log("title:" + $scope.todo.title);
-				if($scope)
-			}
+			// $scope.checkForm = function(title) {
+			// 	if(title == ""){
+			// 		$scope.isDisabled = true;
+			// 	}
+			// 	$scope.isDisabled = false;
+			// }
 		}
 })();
