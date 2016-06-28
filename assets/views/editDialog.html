@@ -1,0 +1,43 @@
+<md-dialog flex="50" ng-controller="TodoCtrl">
+	<!-- dialog header -->
+	<md-toolbar layout-padding>
+			<div layout="row column" layout-align="center" ng-model="editHeader"> Edit {{ editHeader }}</div>
+
+			<!-- <span flex> </span>
+			<md-button ng-click="cancel()" aria-label="addButton">
+				<ng-md-icon icon="clear" style="fill:white" size="16"> </ng-md-icon>
+			</md-button> -->
+	</md-toolbar>
+
+	<!-- forms -->
+	<md-dialog-content layout-padding>
+		<form>
+			<!-- title -->
+			<md-input-container class="md-block">
+				<label> Title </label>
+				<input required name="title" ng-model="todo.title"/> {{ item.name }}
+			</md-input-container>
+
+			<!-- message -->
+			<md-input-container class="md-block">
+				<label> Notes (Optional) </label>
+				<input ng-model="todo.notes"/>
+			</md-input-container>
+
+			<!-- do first -->
+			<!-- <md-checkbox class="md-primary" ng-model="isImportant" ng-click="change()" ng-checked="isChecked" aria-label="Checkbox Important" ng-true-value="" ng-false-value="">
+				Mark as Important
+			</md-checkbox> -->
+
+			<md-checkbox class="md-primary" ng-model="todo.isImportant" ng-click="change()" aria-label="Checkbox Important">
+            	Mark as Important
+          	</md-checkbox>
+		</form>
+
+		<!-- add todo button -->
+		<section layout="row" layout-sm="column" layout-wrap>
+			<md-button class="md-raised md-primary" ng-click="submit()" ng-disabled="isDisabled" aria-label="addButton">  Add To Do  </md-button>
+		</section>
+		<!-- end add todo button -->
+	</md-dialog-content>
+</md-dialog>

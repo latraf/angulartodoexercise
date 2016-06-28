@@ -8,8 +8,8 @@
 				<!-- list of all todos (MAKE IT AS A DIRECTIVE) -->
 				<md-list>
 					<md-list-item class="md-3-line" ng-repeat="item in todos" ng-click="null" aria-label="listItem">
-						<md-checkbox class="md-primary" class="md-avatar"></md-checkbox>
-						<md-button aria-label="editButton"> 
+						<md-checkbox class="md-primary" class="md-avatar" ng-model="isDone" ng-click="done(item)"></md-checkbox>
+						<md-button aria-label="editButton" ng-click="editTodo(item)"> 
 								<ng-md-icon icon="edit" style="fill:grey" class="" size="24"> </ng-md-icon> 
 						</md-button>
 						<md-button aria-label="faveButton"> 
@@ -21,12 +21,9 @@
 							<!-- <p> {{ item.isImportant }} </p> -->
 						</div>
 						<span flex></span>
-						<div>
-							
-							<md-button aria-label="removeButton" ng-click="remove(item)"> 
-								<ng-md-icon icon="clear" style="fill:grey" class="" size="24"> </ng-md-icon> 
-							</md-button>
-						</div>
+						<md-button aria-label="removeButton" ng-click="remove(item)"> 
+							<ng-md-icon icon="clear" style="fill:grey" class="" size="24"> </ng-md-icon> 
+						</md-button>
 					</md-list-item>
 				</md-list>
 				<!-- end of list of all todos -->

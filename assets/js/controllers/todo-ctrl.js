@@ -78,17 +78,11 @@
 					clickOutsideToClose: true,
 					scope: $scope,
 					preserveScope: true,
-					templateUrl: 'assets/views/dialog.html',
+					templateUrl: 'assets/views/addDialog.html',
 					controller: function DialogController($scope, $mdDialog) {
 						$scope.cancel = function() {
 							$mdDialog.cancel();
 							console.log("cancel");
-						}
-						$scope.printTrue = function() {
-							console.log("true");
-						}
-						$scope.printFalse = function() {
-							console.log("false");
 						}
 					}
 				});
@@ -101,11 +95,23 @@
 				$scope.todos.splice($scope.todos[index], 1);
 			}
 
-			// $scope.checkForm = function(title) {
-			// 	if(title == ""){
-			// 		$scope.isDisabled = true;
-			// 	}
-			// 	$scope.isDisabled = false;
-			// }
+			$scope.editTodo = function(item) {
+				$mdDialog.show({
+					clickOutsideToClose: true,
+					scope: $scope,
+					preserveScope: true,
+					templateUrl: 'assets/views/editDialog.html',
+					controller: function DialogController($scope, $mdDialog) {
+						$scope.editHeader = item.name;
+
+						$scope.cancel = function() {
+							$mdDialog.cancel();
+							console.log("cancel");
+						}
+
+					}
+				});
+				// console.log($scope.item.name);
+			}
 		}
 })();
