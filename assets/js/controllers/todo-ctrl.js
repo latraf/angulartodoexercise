@@ -103,6 +103,9 @@
 					templateUrl: 'assets/views/editDialog.html',
 					controller: function DialogController($scope, $mdDialog) {
 						$scope.editHeader = item.name;
+						$scope.editTitle = item.name;
+						$scope.editNotes = item.additional;
+						$scope.editImportant = item.isImportant;
 
 						$scope.cancel = function() {
 							$mdDialog.cancel();
