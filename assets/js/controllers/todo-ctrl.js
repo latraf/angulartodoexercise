@@ -79,12 +79,7 @@
 					scope: $scope,
 					preserveScope: true,
 					templateUrl: 'assets/views/addDialog.html',
-					controller: function DialogController($scope, $mdDialog) {
-						$scope.cancel = function() {
-							$mdDialog.cancel();
-							console.log("cancel");
-						}
-					}
+					controller: function DialogController($scope, $mdDialog) {}
 				});
 			}
 
@@ -107,11 +102,30 @@
 						$scope.editNotes = item.additional;
 						$scope.editImportant = item.isImportant;
 
-						$scope.cancel = function() {
-							$mdDialog.cancel();
-							console.log("cancel");
-						}
+						// $scope.change = function() {
+						// 	console.log("before" + isImportant);
+						// 	$scope.editImportant = !$scope.editImportant;
+						// 	console.log("after" + isImportant);
+						// }
 
+						$scope.edit = function() {
+							var newTitle = $scope.edit.newTitle;
+							var newNotes = $scope.edit.newNotes;
+							var newIsImportant = $scope.edit.editImportant;
+							console.log(newTitle);
+							console.log(newNotes);
+							console.log(newIsImportant);
+							// if(title === null || title === undefined || title === ""){
+							// 	console.log("no entry");
+							// }
+							// else{
+							// 	$scope.pushValues();
+							// 	console.log("PUSH");
+							// 	$scope.reset();
+							// }
+							// console.log($scope.todos.length);
+						// }
+						}
 					}
 				});
 				// console.log($scope.item.name);

@@ -1,7 +1,7 @@
 <md-dialog flex="50" ng-controller="TodoCtrl">
 	<!-- dialog header -->
 	<md-toolbar layout-padding>
-			<div layout="row column" layout-align="center" ng-model="editHeader"> Edit {{ editHeader }} </div>
+			<div layout="row column" layout-align="center" ng-model="editHeader"> Edit "{{ editHeader }} " To Do </div>
 
 			<!-- <span flex> </span>
 			<md-button ng-click="cancel()" aria-label="addButton">
@@ -13,10 +13,14 @@
 	<md-dialog-content layout-padding>
 		<form>
 			<!-- title -->
+			<div> 
+				<h4> Previous Title: {{ editTitle }} </h4>
+				<h4> Previous Notes: {{ editNotes }} </h4>
+			</div>
 			<md-input-container class="md-block">
 				<label> Title </label>
-				<input required name="title" ng-model="editTitle"/>
-				<div ng-messages="editTitleForm.$error">
+				<input required name="title" ng-model="edit.newTitle"/>
+				<div ng-messages="editForm.newTitle.$error">
 					<div ng-message="required"> This is required. </div>
 				</div>
 			</md-input-container>
@@ -24,7 +28,7 @@
 			<!-- message -->
 			<md-input-container class="md-block">
 				<label> Notes (Optional) </label>
-				<input ng-model="editNotes"/>
+				<input ng-model="edit.newNotes"/>
 			</md-input-container>
 
 			<!-- do first -->
@@ -32,14 +36,14 @@
 				Mark as Important
 			</md-checkbox> -->
 
-			<md-checkbox class="md-primary" ng-model="editImportant" ng-click="change()" aria-label="Checkbox Important">
+			<md-checkbox class="md-primary" ng-model="edit.editImportant" ng-click="change()" aria-label="Checkbox Important">
             	Mark as Important
           	</md-checkbox>
 		</form>
 
 		<!-- add todo button -->
 		<section layout="row" layout-sm="column" layout-wrap>
-			<md-button class="md-raised md-primary" ng-click="edit(item)" ng-disabled="isDisabled" aria-label="addButton">  Edit {{ editHeader }} </md-button>
+			<md-button class="md-raised md-primary" ng-click="edit(item)"aria-label="addButton">  Edit {{ editHeader }} To Do </md-button>
 		</section>
 		<!-- end add todo button -->
 	</md-dialog-content>
