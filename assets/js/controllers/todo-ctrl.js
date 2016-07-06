@@ -106,9 +106,9 @@
 						console.log("edit important: " + $scope.editImportant);
 
 						$scope.newChange = function() {
-							console.log("before" + isImportant);
+							console.log("before" + newIsImportant);
 							newIsImportant = !newIsImportant;
-							console.log("after" + isImportant);
+							console.log("after" + newIsImportant);
 						}
 
 						$scope.edit = function() {
@@ -123,11 +123,11 @@
 							}
 							else{
 								item.name = newTitle;
-								console.log("new item name: " + item.name);
+								// console.log("new item name: " + item.name);
 								item.additional = newNotes;
-								console.log("new item name: " + item.additional);
+								// console.log("new item name: " + item.additional);
 								item.isImportant = newIsImportant;
-								console.log("new item name: " + item.isImportant);
+								// console.log("new item name: " + item.isImportant);
 							}
 						}
 					}
