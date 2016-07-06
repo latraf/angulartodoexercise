@@ -105,7 +105,7 @@
 						$scope.editImportant = item.isImportant;
 						console.log("edit important: " + $scope.editImportant);
 
-						$scope.change = function() {
+						$scope.newChange = function() {
 							console.log("before" + isImportant);
 							newIsImportant = !newIsImportant;
 							console.log("after" + isImportant);
