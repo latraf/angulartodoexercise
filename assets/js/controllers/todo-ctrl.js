@@ -100,7 +100,9 @@
 						$scope.editHeader = item.name;
 						$scope.editTitle = item.name;
 						$scope.editNotes = item.additional;
+						console.log("important: " + item.isImportant);
 						$scope.editImportant = item.isImportant;
+						console.log("edit important: " + $scope.editImportant);
 
 						// $scope.change = function() {
 						// 	console.log("before" + isImportant);
@@ -111,13 +113,13 @@
 						$scope.edit = function() {
 							var newTitle = $scope.edit.newTitle;
 							var newNotes = $scope.edit.newNotes;
-							var newIsImportant = $scope.edit.editImportant;
+							var newIsImportant = false;
 							console.log(newTitle);
 							console.log(newNotes);
 							console.log(newIsImportant);
-							// if(title === null || title === undefined || title === ""){
-							// 	console.log("no entry");
-							// }
+							if(newTitle === null || newTitle === undefined || newTitle === ""){
+								console.log("no entry");
+							}
 							// else{
 							// 	$scope.pushValues();
 							// 	console.log("PUSH");
