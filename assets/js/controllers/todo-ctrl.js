@@ -47,6 +47,7 @@
 						$scope.reset();
 					}
 					console.log($scope.todos.length);
+					$scope.closeDialog();
 				// }
 			}
 
@@ -90,10 +91,15 @@
 				$scope.todos.splice($scope.todos[index], 1);
 			}
 
+			$scope.closeDialog = function() {
+				$mdDialog.hide();
+			}
+
 			$scope.editTodo = function(item) {
 				$mdDialog.show({
 					clickOutsideToClose: true,
 					scope: $scope,
+					parent: angular.element(document.body),
 					preserveScope: true,
 					templateUrl: 'assets/views/editDialog.html',
 					controller: function DialogController($scope, $mdDialog) {
@@ -132,6 +138,11 @@
 							}
 							item.additional = newNotes;
 							item.isImportant = newIsImportant;
+							$scope.closeEditDialog();
+						}
+
+						$scope.closeEditDialog = function() {
+							$mdDialog.hide();
 						}
 					}
 				});
