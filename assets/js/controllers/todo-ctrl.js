@@ -34,6 +34,8 @@
 
 			$scope.doneTodos = [];
 			$scope.importantTodos = [];
+			$scope.undoneTodos = [];
+			$scope.unimportantTodos = [];
 
 			$scope.submit = function() {
 				title = $scope.todo.title;
@@ -44,6 +46,7 @@
 					$scope.reset();
 				}
 				$scope.closeDialog();
+				console.log($scope.isDone);
 			}
 
 			$scope.change = function() {
@@ -69,6 +72,15 @@
 					isDone: isDone
 				};
 				$scope.todos.push(item);
+			}
+
+			$scope.pushDone = function(item) {
+				isDone = !isDone
+				item.isDone = isDone;
+
+				console.log(item.isDone);
+				$scope.doneTodos.push(item);
+				isDone = false;
 			}
 
 			$scope.addTodo = function() {
