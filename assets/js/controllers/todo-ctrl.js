@@ -100,33 +100,35 @@
 						$scope.editHeader = item.name;
 						$scope.editTitle = item.name;
 						$scope.editNotes = item.additional;
+						var newIsImportant = false;
 						console.log("important: " + item.isImportant);
 						$scope.editImportant = item.isImportant;
 						console.log("edit important: " + $scope.editImportant);
 
-						// $scope.change = function() {
-						// 	console.log("before" + isImportant);
-						// 	$scope.editImportant = !$scope.editImportant;
-						// 	console.log("after" + isImportant);
-						// }
+						$scope.change = function() {
+							console.log("before" + isImportant);
+							newIsImportant = !newIsImportant;
+							console.log("after" + isImportant);
+						}
 
 						$scope.edit = function() {
 							var newTitle = $scope.edit.newTitle;
 							var newNotes = $scope.edit.newNotes;
-							var newIsImportant = false;
+							// var newIsImportant = $scope.editImportant;
 							console.log(newTitle);
 							console.log(newNotes);
 							console.log(newIsImportant);
 							if(newTitle === null || newTitle === undefined || newTitle === ""){
 								console.log("no entry");
 							}
-							// else{
-							// 	$scope.pushValues();
-							// 	console.log("PUSH");
-							// 	$scope.reset();
-							// }
-							// console.log($scope.todos.length);
-						// }
+							else{
+								item.name = newTitle;
+								console.log("new item name: " + item.name);
+								item.additional = newNotes;
+								console.log("new item name: " + item.additional);
+								item.isImportant = newIsImportant;
+								console.log("new item name: " + item.isImportant);
+							}
 						}
 					}
 				});
