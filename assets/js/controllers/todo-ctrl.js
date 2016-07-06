@@ -35,15 +35,15 @@
 					title = $scope.todo.title;
 					notes = $scope.todo.notes;	
 					// $scope.checkForm(title);
-					console.log(title);
-					console.log(notes);
-					console.log(isImportant);
+					// console.log(title);
+					// console.log(notes);
+					// console.log(isImportant);
 					if(title === null || title === undefined || title === ""){
-						console.log("no entry");
+						// console.log("no entry");
 					}
 					else{
 						$scope.pushValues();
-						console.log("PUSH");
+						// console.log("PUSH");
 						$scope.reset();
 					}
 					console.log($scope.todos.length);
@@ -70,7 +70,7 @@
 					isImportant: isImportant
 				};
 				$scope.todos.push(item);
-				console.log($scope.todos.length);
+				// console.log($scope.todos.length);
 			}
 
 			$scope.addTodo = function() {
@@ -86,7 +86,7 @@
 			$scope.remove = function(item) {
 				var index = $scope.todos.indexOf(item);
 
-				console.log(index);
+				// console.log(index);
 				$scope.todos.splice($scope.todos[index], 1);
 			}
 
@@ -101,34 +101,37 @@
 						$scope.editTitle = item.name;
 						$scope.editNotes = item.additional;
 						var newIsImportant = false;
-						console.log("important: " + item.isImportant);
+						// console.log("important: " + item.isImportant);
 						$scope.editImportant = item.isImportant;
-						console.log("edit important: " + $scope.editImportant);
+						// console.log("edit important: " + $scope.editImportant);
 
 						$scope.newChange = function() {
-							console.log("before" + newIsImportant);
+							// console.log("before" + newIsImportant);
 							newIsImportant = !newIsImportant;
-							console.log("after" + newIsImportant);
+							// console.log("after" + newIsImportant);
 						}
 
 						$scope.edit = function() {
 							var newTitle = $scope.edit.newTitle;
 							var newNotes = $scope.edit.newNotes;
 							// var newIsImportant = $scope.editImportant;
-							console.log(newTitle);
-							console.log(newNotes);
-							console.log(newIsImportant);
+							// console.log(newTitle);
+							// console.log(newNotes);
+							// console.log(newIsImportant);
 							if(newTitle === null || newTitle === undefined || newTitle === ""){
-								console.log("no entry");
+								item.name = item.name;
+
 							}
 							else{
 								item.name = newTitle;
 								// console.log("new item name: " + item.name);
-								item.additional = newNotes;
+								// item.additional = newNotes;
 								// console.log("new item name: " + item.additional);
-								item.isImportant = newIsImportant;
+								// item.isImportant = newIsImportant;
 								// console.log("new item name: " + item.isImportant);
 							}
+							item.additional = newNotes;
+							item.isImportant = newIsImportant;
 						}
 					}
 				});
