@@ -46,7 +46,7 @@
 						// console.log("PUSH");
 						$scope.reset();
 					}
-					console.log($scope.todos.length);
+					// console.log($scope.todos.length);
 					$scope.closeDialog();
 				// }
 			}
