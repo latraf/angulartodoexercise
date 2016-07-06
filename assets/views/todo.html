@@ -13,8 +13,8 @@
 								<ng-md-icon icon="edit" style="fill:grey" class="" size="24"> </ng-md-icon> 
 						</md-button>
 						<md-button aria-label="faveButton"> 
-							<ng-md-icon icon="star" style="fill:pink" class="md-avatar" size="36"> </ng-md-icon>
-							<ng-md-icon icon="star_border" style="fill:pink" class="md-avatar" size="36"> </ng-md-icon>
+							<ng-md-icon icon="star" style="fill:pink" class="md-avatar" size="36" ng-hide="!item.isImportant"> </ng-md-icon>
+							<ng-md-icon icon="star_border" style="fill:pink" class="md-avatar" size="36" ng-hide="item.isImportant"> </ng-md-icon>
 						</md-button>
 						<div class="md-list-item-text">
 							<h3> {{ item.name }} </h3>
