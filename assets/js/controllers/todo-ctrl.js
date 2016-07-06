@@ -52,9 +52,18 @@
 			}
 
 			$scope.change = function() {
-				// console.log("before" + isImportant);
+				console.log("before: " + isImportant);
 				isImportant = !isImportant;
-				// console.log("after" + isImportant);
+				// $scope.todo.isImportant = isImportant;
+				console.log("after: " + isImportant);
+
+			}
+
+			$scope.changeStar = function(item) {
+				console.log("before: " + isImportant);
+				isImportant = !isImportant;
+				item.isImportant = isImportant;
+				console.log("after: " + isImportant);
 
 			}
 

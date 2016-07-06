@@ -12,7 +12,7 @@
 						<md-button aria-label="editButton" ng-click="editTodo(item)"> 
 								<ng-md-icon icon="edit" style="fill:grey" class="" size="24"> </ng-md-icon> 
 						</md-button>
-						<md-button aria-label="faveButton"> 
+						<md-button aria-label="faveButton" ng-click="changeStar(item)"> 
 							<ng-md-icon icon="star" style="fill:pink" class="md-avatar" size="36" ng-hide="!item.isImportant"> </ng-md-icon>
 							<ng-md-icon icon="star_border" style="fill:pink" class="md-avatar" size="36" ng-hide="item.isImportant"> </ng-md-icon>
 						</md-button>
